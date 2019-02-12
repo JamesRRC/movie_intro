@@ -10,6 +10,14 @@
   Character.Create(
     name: FAKER::Star_Wars.unique.character,
     quote: FAKER::Star_Wars.quote(character),
-    species: FAKER::Star_Wars.specie
+    species: FAKER::Star_Wars.specie,
+    planet: FAKER::Star_Wars.planet
+  )
+  end
+
+30.times do
+  Planet.Create(
+    name: FAKER::Star_Wars.unique.planet,
+    characters: FAKER::Star_Wars.character
   )
   end

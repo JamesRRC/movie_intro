@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_12_163556) do
+ActiveRecord::Schema.define(version: 2019_02_12_170331) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 2019_02_12_163556) do
     t.string "planet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "characters_planets", id: false, force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.integer "planet_id", null: false
   end
 
   create_table "planets", force: :cascade do |t|
