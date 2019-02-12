@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-30.times do
+Character.destroy_all
+Planet.destroy_all
+
+100.times do
   Character.create(
     name: Faker::Movies::StarWars.character,
     quote: Faker::Movies::StarWars.quote,
@@ -15,7 +18,7 @@
   )
   end
 
-30.times do
+100.times do
   Planet.create(
     name: Faker::Movies::StarWars.planet,
     characters: Faker::Movies::StarWars.character

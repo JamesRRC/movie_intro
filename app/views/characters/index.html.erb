@@ -26,6 +26,14 @@
   </tbody>
 </table>
 
+<body>
+    <% form_tag(search_results_path, method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= submit_tag("Search") %>
+    <% end %>
+    <%= yield %>
+  </body>
+
 <br>
 
 <%= link_to 'New Character', new_character_path %>
