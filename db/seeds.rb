@@ -7,17 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 30.times do
-  Character.Create(
-    name: FAKER::Star_Wars.unique.character,
-    quote: FAKER::Star_Wars.quote(character),
-    species: FAKER::Star_Wars.specie,
-    planet: FAKER::Star_Wars.planet
+  Character.create(
+    name: Faker::Movies::StarWars.character,
+    quote: Faker::Movies::StarWars.quote,
+    species: Faker::Movies::StarWars.specie,
+    planet: Faker::Movies::StarWars.planet
   )
   end
 
 30.times do
-  Planet.Create(
-    name: FAKER::Star_Wars.unique.planet,
-    characters: FAKER::Star_Wars.character
+  Planet.create(
+    name: Faker::Movies::StarWars.planet,
+    characters: Faker::Movies::StarWars.character
   )
   end
