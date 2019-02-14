@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def results
-    @query = params[:q]
+    @query = params[:name]
     @characters_found = Character.where('name LIKE ?', "%#{@query}%")
   end
 end

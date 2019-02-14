@@ -2,9 +2,9 @@
 
 <h1>Characters</h1>
 
-<%= form_tag(characters_path method: :get) do %>
+<%= form_tag(search_results_path, method: :get) do %>
   <%= text_field_tag :name, params[:name] %>
-  <%= submit_tag 'Search', name: nil %>
+  <%= submit_tag 'Search' %>
 <% end %>
 
 <table>
