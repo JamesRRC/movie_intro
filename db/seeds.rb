@@ -18,7 +18,7 @@ Planet.destroy_all
   )
   end
 
-100.times do
+400.times do
   Planet.create(
     name: Faker::Movies::StarWars.planet,
     characters: Faker::Movies::StarWars.character
