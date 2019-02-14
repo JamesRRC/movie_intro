@@ -24,3 +24,9 @@ Planet.destroy_all
     characters: Faker::Movies::StarWars.character
   )
   end
+
+200.times do
+  Dessert.create(
+    name: Faker::Dessert.topping
+  )
+end
