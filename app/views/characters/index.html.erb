@@ -2,6 +2,11 @@
 
 <h1>Characters</h1>
 
+<%= form_tag(characters_path method: :get) do %>
+  <%= text_field_tag :name, params[:name] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -15,9 +20,9 @@
   <tbody>
     <% @characters.each do |character| %>
       <tr>
-        <td><%= character.name %></td>
-        <td><%= character.quote %></td>
-        <td><%= character.species %></td>
+        <td class="col-sm-auto"><%= character.name %></td>
+        <td class="col-xl-auto"><%= character.quote %></td>
+        <td class="col-sm"><%= character.species %></td>
         <td><%= link_to 'Show', character %></td>
         <td><%= link_to 'Edit', edit_character_path(character) %></td>
         <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,13 +31,7 @@
   </tbody>
 </table>
 
-<body>
-    <% form_tag(search_results_path, method: "get") do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= submit_tag("Search") %>
-    <% end %>
-    <%= yield %>
-  </body>
+<%= will_paginate @posts %>
 
 <br>
 

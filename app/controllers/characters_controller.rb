@@ -4,13 +4,22 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all
+    if params[:input]
+      @characters = Character.where('character LIKE ?', "%#{params[:character]}%")
+    else
+      @characters = Character.paginate(:page => params[:page])
+    end
   end
 
   # GET /characters/1
   # GET /characters/1.json
   def show
   end
+
+
+
+
+  WillPaginate.per_page = 5
 
   # GET /characters/new
   def new
@@ -69,6 +78,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :quote, :species)
+      params.require(:character).permit(:name)
     end
 end
