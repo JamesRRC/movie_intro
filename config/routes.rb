@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'search_results', to: 'search#results', as: 'search_results'
   get 'about', to: 'about#about'
+  get 'vehicles', to: 'vehicles#index'
+  get 'characters', to: 'character#index'
 
   root to: 'characters#index'
 
