@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_173442) do
 
   create_table "vehicles", force: :cascade do |t|
     t.string "make_and_model"
-    t.string "type"
+    t.string "type_of_vehicle"
     t.integer "characterID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

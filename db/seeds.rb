@@ -34,6 +34,7 @@ end
 50.times do
   Vehicle.create(
     make_and_model: Faker::Vehicle.make_and_model,
-    type: Faker::Vehicle.car_type,
+    type_of_vehicle: Faker::Vehicle.car_type,
     character_name: Faker::Movies::StarWars.character
   )
+end
